@@ -20,10 +20,9 @@ This isn't a serious project, just a test of Github co-pilot.
 ## Software Prerequisites
 
 ### Windows
-- [CMake](https://cmake.org/download/) (version 3.13 or later)
-- [ARM GCC Compiler](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads)
-- [Build Tools for Visual Studio](https://visualstudio.microsoft.com/downloads/) or MinGW
-- [Python 3](https://www.python.org/downloads/) (required by Pico SDK)
+- [Raspberry Pi Pico SDK](https://github.com/raspberrypi/pico-sdk) (includes CMake, ARM GCC, Ninja, and Python)
+  - Recommended: Install the complete Pico SDK package which includes all necessary tools
+  - Example installation path: `C:\Program Files\Raspberry Pi\Pico SDK v1.5.1`
 
 ### Linux/macOS
 ```bash
@@ -38,28 +37,33 @@ brew install arm-none-eabi-gcc
 
 ## Building
 
-### 1. Set up Pico SDK
+### Windows (with Pico SDK installed)
+
+```powershell
+# Clean previous build if needed
+Remove-Item -Recurse -Force build
+mkdir build
+cd build
+
+# Set up Pico environment and build with Ninja
+. "C:\Program Files\Raspberry Pi\Pico SDK v1.5.1\pico-env.ps1"
+cmake -G "Ninja" ..
+ninja
+```
+
+### Linux/macOS
 
 **Option A: Set environment variable (recommended)**
 ```bash
-# Windows (PowerShell)
-$env:PICO_SDK_PATH = "C:\path\to\pico-sdk"
-
-# Linux/macOS
 export PICO_SDK_PATH=/path/to/pico-sdk
 ```
 
 **Option B: Let CMake download it automatically**
 ```bash
-# Windows (PowerShell)
-$env:PICO_SDK_FETCH_FROM_GIT = "ON"
-
-# Linux/macOS
 export PICO_SDK_FETCH_FROM_GIT=ON
 ```
 
-### 2. Build the project
-
+**Build the project**
 ```bash
 # Create build directory
 mkdir build
