@@ -2,6 +2,8 @@
 
 A simple LED blink example for the Raspberry Pi Pico microcontroller, demonstrating basic GPIO control and USB serial debugging.
 
+This isn't a serious project, just a test of Github co-pilot.
+
 ## Features
 
 - Configurable LED pin (supports both Pico and Pico W)
