@@ -1,0 +1,53 @@
+# Build directories
+build/
+cmake-build-*/
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+!CMakeLists.txt
+!pico_sdk_import.cmake
+
+# Compiled binaries
+*.elf
+*.bin
+*.hex
+*.uf2
+*.map
+*.dis
+
+# Object files
+*.o
+*.obj
+
+# IDE files
+.vscode/
+.idea/
+*.code-workspace
+*.sublime-*
+
+# Visual Studio
+.vs/
+*.vcxproj
+*.vcxproj.*
+*.sln
+
+# macOS
+.DS_Store
+
+# Pico SDK (if downloaded)
+pico-sdk/
+
+# Backup files
+*~
+*.bak
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
